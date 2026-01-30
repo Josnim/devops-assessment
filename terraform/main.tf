@@ -65,8 +65,7 @@ resource "kubernetes_service" "devops_service" {
       port        = 80
       target_port = 8000
     }
-
-    # REQUISITO: Load Balancer
+    
     type = "LoadBalancer"
   }
 }
