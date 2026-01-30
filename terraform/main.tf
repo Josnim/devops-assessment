@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  config_path = "~/.kube/config" # Usa la conexión de tu Docker Desktop
+  config_path = "~/.kube/config" 
 }
 
 resource "kubernetes_deployment" "devops_app" {
@@ -28,14 +28,13 @@ resource "kubernetes_deployment" "devops_app" {
 
       spec {
         container {
-          image = "devops-microservice:v1" # La imagen Docker que creamos
+          image = "devops-microservice:v1" 
           name  = "microservice-container"
 
           port {
             container_port = 8000
           }
 
-          # Recursos sugeridos (Admin avanzada de Linux/K8s)
           resources {
             limits = {
               cpu    = "0.5"
